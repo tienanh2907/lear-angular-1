@@ -1,0 +1,10 @@
+<button (click)="onChange()">Open</button>
+
+<div *ngIf="!open">
+  <ul>
+    <li *ngFor="let todo of todos; trackBy: trackFn">
+      <app-todo *ngIf=" !todo.isDelete" [todo]="todo"></app-todo>
+    </li>
+  </ul>
+
+</div>

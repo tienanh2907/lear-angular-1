@@ -1,0 +1,10 @@
+<div class="flex items-center gap-5 mb-3" *ngIf="!todo.isDelete">
+  <span> {{todo.title}} </span>
+  <span [ngSwitch]="todo.completed">
+    <div *ngSwitchCase="1" class="bg-yellow-500 text-white px-3 py-1 rounded-lg">Doing</div>
+    <div *ngSwitchCase="2" class="bg-green-500 text-white px-3 py-1 rounded-lg">Complete</div>
+    <div *ngSwitchCase="3" class="bg-red-500 text-white px-3 py-1 rounded-lg">InComplete</div>
+    <div *ngSwitchDefault>None</div>
+  </span>
+  <button class="text-white bg-blue-500 px-3 py-1 rounded-lg" (click)="onDelete()">Delete</button>
+</div>
